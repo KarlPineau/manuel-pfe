@@ -1,0 +1,35 @@
+type: fields
+fields:
+  title:
+    label: Titre
+    type: text
+  sections:
+    label: Contenu
+    type: layout
+    fieldsets:
+      generic:
+        label: Génériques
+        type: group
+        fieldsets:
+          - heading
+          - text
+          - list
+          - image
+      generic-rare:
+        label: Génériques rares
+        type: group
+        open: false
+        fieldsets:
+          - video
+          - markdown
+          - code
+      specific-manual:
+        label: Blocs du manuel
+        type: group
+        open: false
+        fieldsets:
+          - citation
+          - definition
+          - faire
+          - reference
+          - temoignage

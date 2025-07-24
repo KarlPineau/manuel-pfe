@@ -1,0 +1,9 @@
+name: À faire
+icon: ✅
+preview: text
+label: "Faire"
+
+fields:
+  instructions:
+    label: Que faut-il faire ?
+    type: textarea

@@ -1,0 +1,84 @@
+@use '../base/variables';
+@use "sass:color";
+
+.c-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 2000;
+
+  &__bar {
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+  }
+}
+
+// Affiche le burger sur mobile seulement
+@media screen and (max-width: 768px) {
+  .c-burger {
+    display: flex;
+  }
+
+  // Cache la sidebar par défaut
+  .l-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1500;
+    background: #fff;
+    width: 280px;
+  }
+
+  // Quand le burger est activé
+  .c-burger__checkbox:checked ~ .l-sidebar {
+    transform: translateX(0);
+  }
+
+  // Empêche le contenu d’être décalé par la sidebar ouverte
+  .l-main {
+    position: relative;
+    z-index: 1000;
+  }
+}
+
+/*
+.header-manuel {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: variables.$font-sans;
+}
+
+.header-progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-bg {
+  width: 80px;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      variables.$vert-anis,
+      color.adjust(variables.$vert-anis, $lightness: -10%)
+  );
+}
+*/

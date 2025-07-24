@@ -1,0 +1,12 @@
+name: Citation
+icon: 🗨️
+preview: text
+label: "Citation"
+
+fields:
+  texte:
+    label: Citation
+    type: textarea
+  auteur:
+    label: Auteur
+    type: text

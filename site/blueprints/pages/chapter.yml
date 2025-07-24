@@ -1,0 +1,31 @@
+title: Chapitre
+icon: 📖
+num: default
+
+columns:
+  - width: 2/3
+    sections:
+      left:
+        extends: sections/page-builder
+  - width: 1/3
+    sections:
+      pages:
+        type: pages
+        status: all
+        label: Sous-pages
+        template: chapter
+      right:
+        type: fields
+        fields:
+          files:
+            label: Fichiers liés
+            type: files
+      couleur:
+        label: Couleur de chapitre
+        type: select
+        options:
+          bleu: "#009688"
+          saumon: "#FF7043"
+          violet: "#7E57C2"
+          menthe: "#66BB6A"
+          framboise: "#EC407A"

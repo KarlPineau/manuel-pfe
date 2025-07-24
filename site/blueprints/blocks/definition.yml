@@ -1,0 +1,9 @@
+name: Définition
+icon: 📘
+preview: text
+label: "Définition"
+
+fields:
+  texte:
+    label: Texte de la définition
+    type: textarea

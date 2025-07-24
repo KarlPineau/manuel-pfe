@@ -1,0 +1,18 @@
+@page {
+  size: A4;
+  margin: 2cm;
+}
+
+body {
+  font-size: 12pt;
+  color: #000;
+  background: white;
+}
+
+nav, .header-manuel, .sidebar {
+  display: none !important;
+}
+
+.bloc {
+  break-inside: avoid;
+}

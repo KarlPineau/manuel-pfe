@@ -1,0 +1,13 @@
+title: Manuel PFE
+
+tabs:
+  pages:
+    label: Pages
+    sections:
+      toplevelpages:
+        type: pages
+        label: Pages de premier niveau
+        sortBy: title asc SORT_LOCALE_STRING SORT_NATURAL SORT_FLAG_CASE
+        sortable: false
+        limit: 50
+        template: chapter

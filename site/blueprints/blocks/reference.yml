@@ -1,0 +1,9 @@
+name: Référence
+icon: 📎
+preview: text
+label: "Référence"
+
+fields:
+  contenu:
+    label: Contenu de la référence
+    type: textarea

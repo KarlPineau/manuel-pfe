@@ -1,0 +1,12 @@
+name: Témoignage étudiant
+icon: 🧑‍🎓
+preview: text
+label: "Témoignage"
+
+fields:
+  citation:
+    label: Témoignage
+    type: textarea
+  auteur:
+    label: Prénom, promo...
+    type: text
