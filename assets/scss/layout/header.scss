@@ -1,7 +1,7 @@
 @use '../base/variables';
 @use "sass:color";
 
-// Cacher le burger sur desktop
+// Masquer le bouton burger en desktop
 .c-burger {
   display: none;
 }
@@ -19,6 +19,9 @@
     position: absolute;
     top: 1rem;
     left: 1rem;
+    background: transparent;
+    border: none;
+    padding: 0;
   }
 
   .c-burger__bar {
@@ -27,55 +30,4 @@
     background: #000;
     border-radius: 2px;
   }
-
-  .l-sidebar {
-    position: fixed;
-    left: -100%;
-    top: 0;
-    height: 100vh;
-    width: 280px;
-    background: white;
-    z-index: 1000;
-    transition: left 0.3s ease-in-out;
-  }
-
-  #sidebar-toggle:checked ~ .l-sidebar {
-    left: 0;
-  }
 }
-
-
-/*
-.header-manuel {
-  background: white;
-  border-bottom: 1px solid #eee;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: variables.$font-sans;
-}
-
-.header-progress-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.progress-bg {
-  width: 80px;
-  height: 8px;
-  background: #eee;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(
-      to right,
-      variables.$vert-anis,
-      color.adjust(variables.$vert-anis, $lightness: -10%)
-  );
-}
-*/

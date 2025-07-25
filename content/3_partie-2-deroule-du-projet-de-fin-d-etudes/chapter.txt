@@ -10,4 +10,12 @@ Files:
 
 ----
 
+Couleur: #C0D000
+
+----
+
+Icone: 🗺️
+
+----
+
 Uuid: aumwyt3xv6mg7hmb

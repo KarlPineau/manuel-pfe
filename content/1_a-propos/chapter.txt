@@ -10,4 +10,12 @@ Files:
 
 ----
 
+Couleur: #EC407A
+
+----
+
+Icone: 📖
+
+----
+
 Uuid: wnh7gauny4cjslhi

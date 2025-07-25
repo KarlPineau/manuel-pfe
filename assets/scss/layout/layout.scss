@@ -32,7 +32,6 @@ body {
   padding: 1rem;
 }
 
-/* Sidebar mobile (cachée par défaut) */
 .l-sidebar {
   grid-area: sidebar;
   background: #f8f8f8;
@@ -75,7 +74,23 @@ body {
       "main";
   }
 
+  .l-header {
+    position: static;
+  }
+
   .l-sidebar {
-    display: none;
+    display: block;
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    z-index: 1000;
+    background: #fff;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .l-sidebar.is-open {
+    left: 0;
   }
 }

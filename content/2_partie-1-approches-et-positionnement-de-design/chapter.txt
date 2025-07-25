@@ -10,4 +10,12 @@ Files:
 
 ----
 
+Couleur: #66BB6A
+
+----
+
+Icone: 🧭
+
+----
+
 Uuid: aahgyweigx5jfmee

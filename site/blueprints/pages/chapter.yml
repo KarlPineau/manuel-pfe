@@ -20,12 +20,13 @@ columns:
           files:
             label: Fichiers liés
             type: files
-      couleur:
-        label: Couleur de chapitre
-        type: select
-        options:
-          bleu: "#009688"
-          saumon: "#FF7043"
-          violet: "#7E57C2"
-          menthe: "#66BB6A"
-          framboise: "#EC407A"
+          couleur:
+            label: Couleur personnalisée
+            type: text
+            placeholder: "#C0D000"
+            width: 1/2
+          icone:
+            label: Icône (emoji ou caractère)
+            type: text
+            placeholder: "📘"
+            width: 1/2

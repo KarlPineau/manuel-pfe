@@ -10,4 +10,12 @@ Files:
 
 ----
 
+Couleur: #42A5F5
+
+----
+
+Icone: 🗓️
+
+----
+
 Uuid: tvokwgocc08o5bqt

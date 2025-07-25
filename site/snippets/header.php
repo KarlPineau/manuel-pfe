@@ -28,13 +28,11 @@
 <header class="l-header c-header">
   <div class="c-header__container">
     <div class="c-header__left">
-      <input type="checkbox" id="burger-toggle" class="c-burger__checkbox" hidden>
-      <label for="burger-toggle" class="c-burger" aria-label="Ouvrir le menu">
+      <button id="burger-toggle" class="c-burger" aria-label="Ouvrir le menu">
         <span class="c-burger__bar"></span>
         <span class="c-burger__bar"></span>
         <span class="c-burger__bar"></span>
-      </label>
-
+      </button>
 
       <nav class="c-breadcrumb" aria-label="Fil d’Ariane">
         <a href="<?= $site->url() ?>">Accueil</a>
