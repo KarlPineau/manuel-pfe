@@ -1,0 +1,5 @@
+Uuid: db21nq3vsqvmhfsr
+
+----
+
+Template: blocks/image

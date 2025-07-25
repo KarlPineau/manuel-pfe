@@ -2,7 +2,7 @@ Title: Partie 2 - Déroulé du projet de fin d'études
 
 ----
 
-Sections: 
+Sections: [{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>À travers cette partie, nous revenons sur les différentes étapes qui constitueront le déroulé du PFE. Notre objectif est d’en présenter les tenants, les aboutissants, et d’expliciter en quoi il s’agit d’étapes importantes et comment les mener.</p>"},"id":"c1e04339-0b7a-4e29-a5d4-75afda98405b","isHidden":false,"type":"text"}],"id":"242ea418-a85e-4d22-baee-457bf2f8b9d6","width":"1/1"}],"id":"94d4bf80-88cf-45b9-be79-fd58ea0c81ef"}]
 
 ----
 

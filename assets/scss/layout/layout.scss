@@ -9,7 +9,7 @@ body {
   box-sizing: border-box;
   font-family: system-ui, sans-serif;
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 25% 1fr;
   grid-template-rows: auto auto 1fr;
   grid-template-areas:
     "sidebar header"
@@ -52,23 +52,22 @@ body {
   position: fixed;
   top: 0;
   overflow: hidden;
-  width: 280px;
+  width: 25%;
+  min-width: 280px;
   border-right: 1px solid #e5e5e5;
 }
 
 .l-main {
   grid-area: main;
-  padding: 2rem;
   background: #fff;
   height: calc(100vh - var(--header-height));
-  max-width: 900px;
   overflow: visible;
 
-  @media (max-width: 1024px) {
-    .l-main {
-      max-width: 90%;
-    }
-  }
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-size: 1.125rem; /* ~18px */
+  line-height: 1.7;
 }
 
 /* ===============================
