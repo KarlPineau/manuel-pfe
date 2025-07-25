@@ -1,10 +1,76 @@
-@use '../base/variables';
-@use "sass:color";
+@use "../base/variables";
 
-// Masquer le bouton burger en desktop
-.c-burger {
-  display: none;
+.c-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  transition: all 0.3s ease;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    transition: padding 0.3s ease;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  &__part {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: variables.$gray-900;
+  }
+
+  &__chapter {
+    font-size: 0.9rem;
+    color: #777;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  &__reading {
+    color: #555;
+  }
+
+  &__download {
+    text-decoration: none;
+    color: variables.$gray-900;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.is-minimized {
+    .c-header__container {
+      padding: 0.5rem 1.5rem;
+    }
+
+    .c-header__chapter {
+      display: none;
+    } .c-header__part {
+        font-size: 1rem;
+      }
+  }
 }
+
 
 @media (max-width: 768px) {
   .c-burger {
@@ -16,7 +82,7 @@
     height: 40px;
     cursor: pointer;
     z-index: 1001;
-    position: absolute;
+    position: static;
     top: 1rem;
     left: 1rem;
     background: transparent;
@@ -30,4 +96,21 @@
     background: #000;
     border-radius: 2px;
   }
+
+  .c-header__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .c-header__right {
+    display: none;
+  }
+
 }
+
+.c-header__reading.v-express    { color: #66BB6A; }
+.c-header__reading.v-rapide     { color: #42A5F5; }
+.c-header__reading.v-complete   { color: #7E57C2; }
+.c-header__reading.v-longue     { color: #FF7043; }
+.c-header__reading.v-verylong   { color: #EC407A; }

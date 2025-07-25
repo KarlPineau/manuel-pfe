@@ -1,0 +1,13 @@
+@use "../base/variables";
+
+.c-progress-bar {
+  height: 4px;
+  background: #eee;
+
+  &__fill {
+    height: 100%;
+    background: variables.$vert-anis;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+}

@@ -25,7 +25,50 @@
 
 <body class="v-web">
 <div id="top"></div>
-<header class="l-header c-header">
+<?php
+$depth = $page->depth();
+$parents = $page->parents()->listed();
+
+// Par défaut, on suppose que part = niveau 1, sub = niveau 2
+if ($depth === 1) {
+  $part = $page;
+  $sub = null;
+} elseif ($depth === 2) {
+  $part = $page->parent();
+  $sub = $page;
+} else {
+  $part = $parents->nth(1);     // niveau 1
+  $sub =  $parents->first();      // niveau 2
+}
+
+
+function readingCategory($minutes): string {
+  $minutes = (int) $minutes;
+
+  if ($minutes <= 3) return 'Lecture express';
+  if ($minutes <= 7) return 'Lecture rapide';
+  if ($minutes <= 15) return 'Lecture complète';
+  if ($minutes <= 25) return 'Lecture approfondie';
+  return 'Long chapitre';
+}
+
+$words = 0;
+foreach ($page->content()->fields() as $field) {
+  $words += str_word_count(strip_tags($field->value()));
+}
+$readingTime = ceil($words / 200);
+
+$category = readingCategory($readingTime);
+$labelClass = match(true) {
+  $readingTime <= 3 => 'v-express',
+  $readingTime <= 7 => 'v-rapide',
+  $readingTime <= 15 => 'v-complete',
+  $readingTime <= 25 => 'v-longue',
+  default => 'v-verylong',
+};
+?>
+
+<header class="l-header c-header" id="site-header">
   <div class="c-header__container">
     <div class="c-header__left">
       <button id="burger-toggle" class="c-burger" aria-label="Ouvrir le menu">
@@ -34,27 +77,23 @@
         <span class="c-burger__bar"></span>
       </button>
 
-      <nav class="c-breadcrumb" aria-label="Fil d’Ariane">
-        <a href="<?= $site->url() ?>">Accueil</a>
-        <?php foreach ($page->parents()->listed() as $parent): ?>
-          <span>/</span>
-          <a href="<?= $parent->url() ?>"><?= $parent->title()->esc() ?></a>
-        <?php endforeach ?>
-        <span>/</span>
-        <span class="is-current"><?= $page->title()->esc() ?></span>
-      </nav>
+      <div class="c-header__titles">
+        <?php if ($part): ?>
+          <div class="c-header__part"><?= $part->title()->esc() ?></div>
+        <?php endif ?>
+        <?php if ($sub): ?>
+          <div class="c-header__chapter"><?= $sub->title()->esc() ?></div>
+        <?php endif ?>
+      </div>
     </div>
 
     <div class="c-header__right">
-      <span class="c-header__reading">⏱ <?= $page->readtime() ?> min</span>
-      <div class="c-header__progress">
-        <span class="c-header__progress-label">Progression</span>
-        <?php $progress = $page->progress()->int() ?>
-        <div class="c-header__progress-bar">
-          <div class="c-header__progress-fill" style="width: <?= $progress ?>%"></div>
-        </div>
-        <span class="c-header__progress-value"><?= $progress ?>%</span>
-      </div>
+      <span class="c-header__reading <?= $labelClass ?>">⏱ <?= $readingTime ?> min – <?= readingCategory($category) ?></span>
+      <a href="/version-pdf" class="c-header__download">📄 PDF</a>
     </div>
   </div>
 </header>
+
+<div class="l-progress c-progress-bar">
+  <div class="c-progress-bar__fill" id="progress-bar"></div>
+</div>
