@@ -1,0 +1,92 @@
+@use '../base/variables';
+
+.c-navchap {
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  font-size: 0.8rem;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+}
+
+.c-navchap__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.c-navchap__left {
+  text-align: left;
+  flex: 1 1 40%;
+}
+
+.c-navchap__center {
+  text-align: right;
+  padding-right: 0.5rem;
+  flex: 1 1 40%;
+}
+
+.c-navchap__right {
+  text-align: right;
+  flex: 1 1 10%;
+}
+
+/* Liens classiques */
+.c-navchap__link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.c-navchap__link:hover {
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+.c-navchap__link--disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Bouton remonter */
+.c-navchap__top-button {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  font-size: 1.2rem;
+  line-height: 1;
+  border-radius: 4px;
+  background: #eee;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.c-navchap__top-button:hover {
+  background: #ddd;
+}
+
+@media (max-width: 768px) {
+  .c-navchap__container {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .c-navchap__left,
+  .c-navchap__center,
+  .c-navchap__right {
+    flex: none;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .c-navchap__top-button {
+    font-size: 1.5rem;
+    padding: 0.5em;
+  }
+}
